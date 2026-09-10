@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. Logeshwari | Data Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of S. Logeshwari - Data Analyst specializing in Python, SQL, Power BI, Excel, and AI-Assisted Data Analytics.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SheetJS Excel Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- GSAP Animation Engine & ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <!-- Background Canvas Grid -->
+    <canvas id="bg-canvas"></canvas>
+
+
+
+    <!-- Custom Cursor Rings -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <span class="nav-brand-pill">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>LOGESHWARI SOLAIMALAI</span>
+                    <span class="brand-pulse-dot"></span>
+                </span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#projects" class="btn btn-outline btn-sm nav-cta">View Projects</a>
+                <button class="hamburger-menu" id="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge animate-fade-in">
+                        <span class="badge-dot"></span> Available for Data Analyst Roles
+                    </div>
+                    <h1 class="hero-title animate-title">
+                        Hi, I'm <span class="text-gradient">S. Logeshwari</span>
+                    </h1>
+                    <h2 class="hero-subtitle animate-subtitle">Data Analyst</h2>
+                    <p class="hero-description animate-desc">
+                        B.Sc. Computer Science graduate with hands-on expertise in <strong>Python, SQL, Power BI, and MS Excel</strong>. Trained across 6+ modern data analytics and AI-assisted workflows to translate raw dataset records into actionable business intelligence.
+                    </p>
+
+                    <div class="hero-ctas animate-ctas">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span> <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <button class="btn btn-glass" id="view-resume-btn">
+                            <i class="fa-solid fa-eye"></i> <span>View Resume</span>
+                        </button>
+                        <a href="https://github.com/logeshwari230" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/logeshwari-thangam-8337a12b2" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+
+                    <!-- Subtle Floating Analytics Tech Keywords -->
+                    <div class="hero-tech-orbit">
+                        <span class="orbit-chip orbit-1"><i class="fa-solid fa-chart-pie"></i> POWER BI</span>
+                        <span class="orbit-chip orbit-2"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="orbit-chip orbit-3"><i class="fa-brands fa-python"></i> PYTHON</span>
+                        <span class="orbit-chip orbit-4"><i class="fa-solid fa-file-excel"></i> EXCEL</span>
+                        <span class="orbit-chip orbit-5"><i class="fa-solid fa-robot"></i> AI ANALYTICS</span>
+                        <span class="orbit-chip orbit-6"><i class="fa-solid fa-chart-line"></i> DATA ANALYST</span>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual Widget -->
+                <div class="hero-visual">
+                    <div class="hero-card-widget glass-card">
+                        <div class="widget-header">
+                            <div class="widget-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="widget-title"><i class="fa-solid fa-chart-network"></i> ANALYTICS CONTROL PANEL</span>
+                            <span class="widget-live-badge"><i class="fa-solid fa-circle"></i> Live Data</span>
+                        </div>
+
+                        <!-- Hero Dashboard Tabs -->
+                        <div class="widget-tabs">
+                            <button class="w-tab-btn active" data-tab="telemetry"><i class="fa-solid fa-chart-line"></i> Telemetry</button>
+                            <button class="w-tab-btn" data-tab="powerbi"><i class="fa-solid fa-chart-pie"></i> Power BI View</button>
+                            <button class="w-tab-btn" data-tab="sql"><i class="fa-solid fa-terminal"></i> SQL Query</button>
+                        </div>
+                        
+                        <div class="widget-tab-content active" id="tab-telemetry">
+                            <div class="widget-metrics">
+                                <div class="metric-box">
+                                    <span class="metric-label">Dataset Records</span>
+                                    <span class="metric-value counter" data-target="8000">0</span><span class="metric-plus">+</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-label">Analytics Tools</span>
+                                    <span class="metric-value counter" data-target="10">0</span><span class="metric-plus">+</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="metric-label">Academic Sc.</span>
+                                    <span class="metric-value">70.41%</span>
+                                </div>
+                            </div>
+
+                            <div class="widget-chart-area">
+                                <canvas id="hero-chart" height="130"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="widget-tab-content" id="tab-powerbi" style="display: none;">
+                            <div class="hero-pbi-preview">
+                                <img src="dashboard.png" alt="Student Analytics Power BI Dashboard" class="pbi-img-preview">
+                                <div class="pbi-img-overlay">
+                                    <span><i class="fa-solid fa-expand"></i> Real Student Analytics Power BI Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-tab-content" id="tab-sql" style="display: none;">
+                            <div class="hero-sql-preview">
+                                <pre><code><span class="sql-kw">SELECT</span> student_id, class_name, attendance_rate,
+       <span class="sql-fn">AVG</span>(marks) <span class="sql-kw">AS</span> avg_academic_grade
+<span class="sql-kw">FROM</span> student_performance_5000
+<span class="sql-kw">GROUP BY</span> class_name, student_id
+<span class="sql-kw">HAVING</span> attendance_rate &gt;= 85.0
+<span class="sql-kw">ORDER BY</span> avg_academic_grade <span class="sql-kw">DESC</span>;</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="widget-pills">
+                            <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tech-pill"><i class="fa-solid fa-database"></i> SQL</span>
+                            <span class="tech-pill"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+                            <span class="tech-pill"><i class="fa-solid fa-robot"></i> AI Workflows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-user"></i> Professional Summary</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-card main-about">
+                        <div class="about-icon-bg"><i class="fa-solid fa-brain-circuit"></i></div>
+                        <h3>Data Analytics & Insight Translation</h3>
+                        <p>
+                            I am an entry-level Data Analyst with a <strong>B.Sc. in Computer Science</strong> from Kalaignar Karunanidhi Government Arts College for Women (Autonomous), Pudukkottai. I possess strong foundational skills in data analysis, database querying, exploratory data analysis, and dashboard reporting.
+                        </p>
+                        <p>
+                            Trained across 6+ modern data analytics and AI-assisted tools, I have practical exposure to <strong>Python (Pandas, NumPy), SQL, Power BI, and MS Excel</strong> for end-to-end data handling, cleaning, and reporting. I combine strong analytical thinking with fast learning abilities to translate raw data into clear, actionable business insights.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-graduation-cap highlight-icon"></i>
+                                <div>
+                                    <h4>B.Sc. Computer Science</h4>
+                                    <p>Solid foundation in algorithms, databases & web technologies.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-wand-magic-sparkles highlight-icon"></i>
+                                <div>
+                                    <h4>Advanced Analytics</h4>
+                                    <p>Proficient in tools like Claude, Julius AI, Bricks, Quadratic AI & Zebra AI.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-side-stack">
+                        <div class="glass-card stat-mini-card">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Student Dataset Records Analyzed</div>
+                        </div>
+                        <div class="glass-card stat-mini-card">
+                            <div class="stat-number">3,000+</div>
+                            <div class="stat-label">Healthcare Vitals Records Processed</div>
+                        </div>
+                        <div class="glass-card stat-mini-card">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Analytics Tools Mastered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-microchip"></i> Technical Proficiency</span>
+                    <h2 class="section-title">Technical & AI Skills</h2>
+                    <p class="section-subtitle">Categorized skills directly from hands-on training and projects</p>
+                    <div class="title-line"></div>
+                </div>
+
+                <!-- Skill Category Filter Buttons -->
+                <div class="skill-filters">
+                    <button class="filter-btn active" data-filter="all">All Skills</button>
+                    <button class="filter-btn" data-filter="programming">Programming</button>
+                    <button class="filter-btn" data-filter="database">Database & Querying</button>
+                    <button class="filter-btn" data-filter="visualization">Analytics & Visualization</button>
+                    <button class="filter-btn" data-filter="techniques">Data Techniques</button>
+                    <button class="filter-btn" data-filter="ai">AI & Automation</button>
+                    <button class="filter-btn" data-filter="tools">Web & Version Control</button>
+                </div>
+
+                <!-- Skill Cards Grid -->
+                <div class="skills-grid" id="skills-grid">
+                    
+                    <!-- Programming -->
+                    <div class="skill-card glass-card" data-category="programming">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-python skill-icon python-icon"></i>
+                            <span class="skill-tag">Language</span>
+                        </div>
+                        <h4 class="skill-title">Python</h4>
+                        <p class="skill-desc">Pandas & NumPy for data manipulation, structured dataset processing, and algorithmic data matching.</p>
+                        <div class="skill-subtags">
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                        </div>
+                    </div>
+
+                    <!-- Database & Querying -->
+                    <div class="skill-card glass-card" data-category="database">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-database skill-icon sql-icon"></i>
+                            <span class="skill-tag">Database</span>
+                        </div>
+                        <h4 class="skill-title">SQL & Database Querying</h4>
+                        <p class="skill-desc">Relational Database Design, Data Integration, PostgreSQL queries, record management, and query response optimization.</p>
+                        <div class="skill-subtags">
+                            <span>SQL</span>
+                            <span>Relational DB Design</span>
+                            <span>Data Integration</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Analytics & Visualization -->
+                    <div class="skill-card glass-card" data-category="visualization">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-chart-pie skill-icon powerbi-icon"></i>
+                            <span class="skill-tag">Visualization</span>
+                        </div>
+                        <h4 class="skill-title">Power BI</h4>
+                        <p class="skill-desc">Interactive dashboard creation, academic performance trends, key performance metrics, and grade distribution reporting.</p>
+                        <div class="skill-subtags">
+                            <span>Power BI</span>
+                            <span>Dashboards</span>
+                            <span>KPI Metrics</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="visualization">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-file-excel skill-icon excel-icon"></i>
+                            <span class="skill-tag">Analytics</span>
+                        </div>
+                        <h4 class="skill-title">MS Excel</h4>
+                        <p class="skill-desc">End-to-end data handling, data cleaning, class-wise & subject-wise analysis, and structured reporting.</p>
+                        <div class="skill-subtags">
+                            <span>MS Excel</span>
+                            <span>Data Cleaning</span>
+                            <span>Reporting</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="visualization">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-cubes skill-icon tools-icon"></i>
+                            <span class="skill-tag">Automation</span>
+                        </div>
+                        <h4 class="skill-title">Power Apps & KNIME</h4>
+                        <p class="skill-desc">Data workflow automation in KNIME and low-code app business workflow integration with Power Apps.</p>
+                        <div class="skill-subtags">
+                            <span>Power Apps</span>
+                            <span>KNIME Automation</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Analysis Techniques -->
+                    <div class="skill-card glass-card" data-category="techniques">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-sliders skill-icon techniques-icon"></i>
+                            <span class="skill-tag">Techniques</span>
+                        </div>
+                        <h4 class="skill-title">Data Analysis Techniques</h4>
+                        <p class="skill-desc">Data Cleaning, Data Matching, Query Optimization, Dashboard Reporting, Exploratory Data Analysis (EDA).</p>
+                        <div class="skill-subtags">
+                            <span>Data Cleaning</span>
+                            <span>Query Optimization</span>
+                            <span>EDA</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Automation -->
+                    <div class="skill-card glass-card" data-category="ai">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-robot skill-icon ai-icon"></i>
+                            <span class="skill-tag">AI Workflows</span>
+                        </div>
+                        <h4 class="skill-title">Data Analytics Tools</h4>
+                        <p class="skill-desc">Julius AI, Claude, Bricks, Quadratic AI, Zebra AI, Antigravity, Data Analytics Workflows for smart reporting and data interpretations.</p>
+                        <div class="skill-subtags">
+                            <span>Claude</span>
+                            <span>Julius AI</span>
+                            <span>Quadratic AI</span>
+                            <span>Bricks</span>
+                            <span>Zebra AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Web & Version Control -->
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-html5 skill-icon web-icon"></i>
+                            <span class="skill-tag">Web & Version</span>
+                        </div>
+                        <h4 class="skill-title">Web & Version Control</h4>
+                        <p class="skill-desc">HTML, CSS web interface building, alongside Git & GitHub version control for structured project management.</p>
+                        <div class="skill-subtags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Practical Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Real dataset analysis, SQL database systems, and AI-driven data workflows</p>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    
+                    <!-- PROJECT 1 -->
+                    <div class="project-card glass-card" data-project="student-analytics" onclick="openProjectModal('student-analytics')">
+                        <div class="project-visual-wrapper">
+                            <div class="project-ui-preview student-ui">
+                                <div class="ui-bar-header">
+                                    <span class="ui-dot red"></span>
+                                    <span class="ui-dot yellow"></span>
+                                    <span class="ui-dot green"></span>
+                                    <span class="ui-title">Power BI / PostgreSQL Dashboard</span>
+                                </div>
+                                <div class="ui-content-preview">
+                                    <div class="student-kpi-row">
+                                        <div class="mini-kpi"><span>Records</span><strong>5,000</strong></div>
+                                        <div class="mini-kpi"><span>Avg Pass</span><strong>88.4%</strong></div>
+                                        <div class="mini-kpi"><span>Att. Rate</span><strong>92.1%</strong></div>
+                                    </div>
+                                    <div class="mini-chart-mockup">
+                                        <div class="chart-bar" style="--h: 70%"><span>Class A</span></div>
+                                        <div class="chart-bar" style="--h: 85%"><span>Class B</span></div>
+                                        <div class="chart-bar active" style="--h: 94%"><span>Class C</span></div>
+                                        <div class="chart-bar" style="--h: 60%"><span>Class D</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="project-badge">Dashboard & SQL</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3 class="project-title">Student Analytics Dashboard</h3>
+                            <p class="project-desc">
+                                Analyzed a 5,000-record student dataset across academics, attendance, and fees using PostgreSQL, Excel, and Power BI to derive performance trends and grade distributions.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span>Excel</span>
+                                <span>PostgreSQL</span>
+                                <span>Power BI</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-btn" data-project="student-analytics" onclick="event.stopPropagation(); openProjectModal('student-analytics')">
+                                    <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <span class="project-year"><i class="fa-regular fa-calendar"></i> 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 2 -->
+                    <div class="project-card glass-card" data-project="ecommerce-rec" onclick="openProjectModal('ecommerce-rec')">
+                        <div class="project-visual-wrapper">
+                            <div class="project-ui-preview ecom-ui">
+                                <div class="ui-bar-header">
+                                    <span class="ui-dot red"></span>
+                                    <span class="ui-dot yellow"></span>
+                                    <span class="ui-dot green"></span>
+                                    <span class="ui-title">Pandas & SQL Query Optimizer</span>
+                                </div>
+                                <div class="ui-content-preview">
+                                    <div class="code-preview-block">
+                                        <code>df = pd.read_csv("products.csv")</code>
+                                        <code>df_matched = match_attributes(df)</code>
+                                        <code>sql_query = "SELECT * FROM products..."</code>
+                                    </div>
+                                    <div class="query-status-pill">
+                                        <i class="fa-solid fa-bolt"></i> Match Relevance: 98.6%
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="project-badge">Python & Query Opt</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3 class="project-title">E-commerce Product Recommendation & Query System</h3>
+                            <p class="project-desc">
+                                Applied algorithmic data-matching techniques on structured product datasets with Pandas and SQL to optimize search relevance and match user preferences.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>SQL</span>
+                                <span>Git/GitHub</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-btn" data-project="ecommerce-rec" onclick="event.stopPropagation(); openProjectModal('ecommerce-rec')">
+                                    <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <span class="project-year"><i class="fa-regular fa-calendar"></i> 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 3 -->
+                    <div class="project-card glass-card" data-project="healthcare-ai" onclick="openProjectModal('healthcare-ai')">
+                        <div class="project-visual-wrapper">
+                            <div class="project-ui-preview healthcare-ui">
+                                <div class="ui-bar-header">
+                                    <span class="ui-dot red"></span>
+                                    <span class="ui-dot yellow"></span>
+                                    <span class="ui-dot green"></span>
+                                    <span class="ui-title">AI-Assisted Analytics Studio</span>
+                                </div>
+                                <div class="ui-content-preview">
+                                    <div class="ai-tags-row">
+                                        <span class="ai-chip">Julius AI</span>
+                                        <span class="ai-chip">Quadratic AI</span>
+                                        <span class="ai-chip">Claude AI</span>
+                                    </div>
+                                    <div class="vitals-trend-graph">
+                                        <svg viewBox="0 0 100 40" class="mini-svg-graph">
+                                            <path d="M0,30 Q25,5 50,25 T100,10" fill="none" stroke="var(--cyan)" stroke-width="3"/>
+                                            <circle cx="50" cy="25" r="4" fill="var(--indigo)"/>
+                                        </svg>
+                                        <span class="graph-label">3,000 Records Vitals & Admission Trends</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <h3 class="project-title">Healthcare Data Analytics (AI-Assisted)</h3>
+                            <p class="project-desc">
+                                Analyzed a 3,000-record healthcare dataset using Julius AI, Quadratic AI, Claude, Bricks, and Zebra AI to identify admission trends, vitals, and cost patterns.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span>Julius AI</span>
+                                <span>Quadratic AI</span>
+                                <span>Claude AI</span>
+                                <span>Bricks AI</span>
+                                <span>Zebra AI</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-btn" data-project="healthcare-ai" onclick="event.stopPropagation(); openProjectModal('healthcare-ai')">
+                                    <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <span class="project-year"><i class="fa-regular fa-calendar"></i> 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 4 -->
+                    <div class="project-card glass-card" data-project="school-lms" onclick="openProjectModal('school-lms')">
+                        <div class="project-visual-wrapper">
+                            <div class="project-ui-preview lms-ui">
+                                <div class="ui-bar-header">
+                                    <span class="ui-dot red"></span>
+                                    <span class="ui-dot yellow"></span>
+                                    <span class="ui-dot green"></span>
+                                    <span class="ui-title">SQL & Power BI LMS Dashboard</span>
+                                </div>
+                                <div class="ui-content-preview">
+                                    <div class="db-table-preview">
+                                        <div class="db-row head"><span>Class</span><span>Attendance</span><span>Status</span></div>
+                                        <div class="db-row"><span>Class 10-A</span><span>94.2%</span><span class="badge-green">Optimal</span></div>
+                                        <div class="db-row"><span>Class 12-B</span><span>88.6%</span><span class="badge-blue">Monitored</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="project-badge">SQL & Power BI</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3 class="project-title">School LMS — Record Management & Analytics Dashboard</h3>
+                            <p class="project-desc">
+                                Designed and developed a School LMS in SQL & Power BI to streamline student, subject, class, attendance, and timetable data for real-time reporting.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span>SQL</span>
+                                <span>Power BI</span>
+                                <span>Database Design</span>
+                                <span>Dashboard Reporting</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-btn" data-project="school-lms" onclick="event.stopPropagation(); openProjectModal('school-lms')">
+                                    <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <span class="project-year"><i class="fa-regular fa-calendar"></i> 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic History</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="timeline">
+                    
+                    <!-- B.Sc. Computer Science -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-university"></i></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <h3>B.Sc. Computer Science</h3>
+                                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2023 – 2026</span>
+                            </div>
+                            <p class="institution-name">
+                                Kalaignar Karunanidhi Government Arts College for Women (Autonomous), Pudukkottai
+                            </p>
+                            <div class="grade-badge">
+                                <span class="grade-label">Academic Score:</span>
+                                <span class="grade-value">70.41%</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Completed degree coursework in Computer Science, database administration, web development, and programmatic problem solving.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HSC -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <h3>HSC (Higher Secondary Certificate)</h3>
+                                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2022 – 2023</span>
+                            </div>
+                            <p class="institution-name">
+                                Government Girls Higher Secondary School, Sandhaipettai, Pudukkottai
+                            </p>
+                            <div class="grade-badge">
+                                <span class="grade-label">Academic Score:</span>
+                                <span class="grade-value">74.83%</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Completed higher secondary education with a focus on core analytical subjects.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & INTERNSHIP SECTION -->
+        <section class="section certs-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-certificate"></i> Specialized Internship</span>
+                    <h2 class="section-title">Certifications & Internship</h2>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="cert-card glass-card">
+                    <div class="cert-header">
+                        <div class="cert-icon-box">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="cert-title-info">
+                            <h3>Data Analytics Internship</h3>
+                            <span class="cert-year"><i class="fa-regular fa-calendar"></i> 2026</span>
+                        </div>
+                    </div>
+
+                    <ul class="cert-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check check-icon"></i>
+                            <span>Completed hands-on internship in <strong>Python, SQL, MS Excel, and Power BI</strong> for end-to-end data handling, data cleaning, reporting, and dashboard creation.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check check-icon"></i>
+                            <span>Trained in <strong>KNIME</strong> for data workflow automation and ETL processing.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check check-icon"></i>
+                            <span>Built practical experience across 5+ Data Analytics and productivity tools, including <strong>Claude, Julius AI, Bricks, Quadratic AI, and Zebra AI</strong>, for advanced data analysis tasks.</span>
+                        </li>
+                    </ul>
+
+                    <div class="cert-tags">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>MS Excel</span>
+                        <span>Power BI</span>
+                        <span>KNIME</span>
+                        <span>Claude AI</span>
+                        <span>Julius AI</span>
+                        <span>Bricks AI</span>
+                        <span>Quadratic AI</span>
+                        <span>Zebra AI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERPERSONAL SKILLS SECTION -->
+        <section class="section interpersonal-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-lightbulb"></i> Work Ethic & Soft Skills</span>
+                    <h2 class="section-title">Interpersonal Skills & Languages</h2>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="interpersonal-grid">
+                    
+                    <div class="glass-card soft-card">
+                        <i class="fa-solid fa-fire soft-icon"></i>
+                        <h4>Self-Motivated</h4>
+                        <p>Driven to continuously upgrade data engineering and analytics skill sets.</p>
+                    </div>
+
+                    <div class="glass-card soft-card">
+                        <i class="fa-solid fa-hammer soft-icon"></i>
+                        <h4>Hardworking</h4>
+                        <p>Dedicated to meticulous data cleaning, accuracy, and thorough validation.</p>
+                    </div>
+
+                    <div class="glass-card soft-card">
+                        <i class="fa-solid fa-puzzle-piece soft-icon"></i>
+                        <h4>Problem Solving</h4>
+                        <p>Structured approach to resolving query inefficiencies and complex datasets.</p>
+                    </div>
+
+                    <div class="glass-card soft-card">
+                        <i class="fa-solid fa-chart-diagram soft-icon"></i>
+                        <h4>Analytical Thinking</h4>
+                        <p>Aptitude for discovering hidden patterns, distributions, and operational insights.</p>
+                    </div>
+
+                    <div class="glass-card soft-card">
+                        <i class="fa-solid fa-magnifying-glass-chart soft-icon"></i>
+                        <h4>Attention to Detail</h4>
+                        <p>High precision in data matching, database integrity, and KPI reporting.</p>
+                    </div>
+
+                    <div class="glass-card soft-card lang-card">
+                        <i class="fa-solid fa-language soft-icon"></i>
+                        <h4>Languages</h4>
+                        <div class="lang-list">
+                            <span class="lang-pill">English</span>
+                            <span class="lang-pill">Tamil (Native)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-envelope"></i> Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Open to Data Analyst & Business Intelligence Opportunities</p>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info-cards">
+                        
+                        <a href="mailto:thangamlogeshwari@gmail.com" class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email Address</span>
+                                <span class="contact-value">thangamlogeshwari@gmail.com</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-link-icon"></i>
+                        </a>
+
+                        <a href="tel:+919043373047" class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone Number</span>
+                                <span class="contact-value">+91 9043373047</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-link-icon"></i>
+                        </a>
+
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-details">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Pudukkottai, Tamil Nadu</span>
+                            </div>
+                        </div>
+
+                        <div class="social-contact-row">
+                            <a href="https://linkedin.com/in/logeshwari-thangam-8337a12b2" target="_blank" rel="noopener noreferrer" class="social-contact-card glass-card">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                            <a href="https://github.com/logeshwari230" target="_blank" rel="noopener noreferrer" class="social-contact-card glass-card">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub Profile</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Direct Message / Copy Box -->
+                    <div class="glass-card contact-cta-box">
+                        <h3>Ready to discuss an opportunity?</h3>
+                        <p>Feel free to reach out via email or phone for entry-level Data Analyst positions, internships, or data visualization projects.</p>
+                        
+                        <div class="copy-email-area">
+                            <input type="text" value="thangamlogeshwari@gmail.com" readonly id="email-copy-input">
+                            <button class="btn btn-primary" id="copy-email-btn">
+                                <i class="fa-regular fa-copy"></i> <span id="copy-btn-text">Copy Email</span>
+                            </button>
+                        </div>
+
+                        <a href="mailto:thangamlogeshwari@gmail.com" class="btn btn-glass btn-full mt-3">
+                            <i class="fa-solid fa-paper-plane"></i> Send Direct Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PROJECT DETAILS MODAL / VIEW OVERLAY -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog">
+        <div class="modal-container glass-card">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close project details">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamically injected via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SUB-VIEWER MODAL (Full Image Lightbox, Excel Table, Power BI Preview) -->
+    <div class="modal-overlay" id="sub-viewer-modal" aria-hidden="true" role="dialog">
+        <div class="modal-container glass-card sub-viewer-container">
+            <div class="sub-viewer-header">
+                <button class="btn btn-glass btn-sm" id="sub-viewer-back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> <span>Back</span>
+                </button>
+                <span class="sub-viewer-title" id="sub-viewer-title">Preview</span>
+                <button class="modal-close-btn inline-close" id="sub-viewer-close-btn" aria-label="Close preview">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="sub-viewer-body" id="sub-viewer-body">
+                <!-- Dynamically injected via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUME PREVIEW MODAL -->
+    <div class="modal-overlay" id="resume-modal" aria-hidden="true" role="dialog">
+        <div class="modal-container glass-card resume-modal-container">
+            <div class="resume-modal-header">
+                <div class="resume-title-group">
+                    <h3><i class="fa-solid fa-file-pdf"></i> Resume Preview — S. Logeshwari</h3>
+                    <span class="resume-sub-text">Data Analyst</span>
+                </div>
+                <div class="resume-actions">
+                    <a href="resume.pdf" download="S_Logeshwari_Resume.pdf" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-download"></i> <span>Download Resume</span>
+                    </a>
+                    <button class="modal-close-btn inline-close" id="resume-modal-close" aria-label="Close resume preview">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <iframe src="resume.pdf" width="100%" height="100%" class="resume-iframe" title="S. Logeshwari Resume PDF">
+                    <p>Your browser does not support inline PDF viewing. <a href="resume.pdf" target="_blank">Click here to view resume PDF</a>.</p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Email address copied to clipboard!</div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="brand-text">S. LOGESHWARI</span>
+                <span class="footer-sub">Data Analyst</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/logeshwari-thangam-8337a12b2" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/logeshwari230" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="mailto:thangamlogeshwari@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="year">2026</span> S. Logeshwari. All rights reserved. Professional Data Analyst Portfolio.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom JS Script -->
+    <script src="script.js"></script>
+</body>
+</html>
