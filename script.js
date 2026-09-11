@@ -245,8 +245,13 @@ function initHeroChart() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    canvas.width = canvas.parentElement.clientWidth || 300;
-    canvas.height = 130;
+    function resizeChart() {
+        if (!canvas.parentElement) return;
+        canvas.width = canvas.parentElement.clientWidth || 300;
+        canvas.height = 130;
+    }
+    resizeChart();
+    window.addEventListener('resize', resizeChart);
 
     const dataPoints = [25, 42, 35, 68, 54, 85, 78, 95, 88, 110];
     let progress = 0;
@@ -513,6 +518,8 @@ function initNavBehavior() {
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
+    if (!navbar || !hamburger || !navLinks) return;
+
     // Sticky Navbar on Scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
@@ -540,7 +547,8 @@ function initNavBehavior() {
     });
 
     // Hamburger Mobile Menu
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
@@ -550,6 +558,20 @@ function initNavBehavior() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1023) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
     });
 }
 
